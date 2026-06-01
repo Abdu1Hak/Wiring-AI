@@ -1,0 +1,183 @@
+[
+  {
+    "id": "arduino_uno",
+    "name": "Arduino Uno R3",
+    "aliases": ["arduino", "uno", "arduino board"],
+    "category": "microcontroller",
+    "pins": [
+      { "id": "vin", "label": "VIN", "type": "power_in" },
+      { "id": "gnd1", "label": "GND", "type": "ground" },
+      { "id": "gnd2", "label": "GND", "type": "ground" },
+      { "id": "5v", "label": "5V", "type": "power_out", "voltage": 5 },
+      { "id": "3v3", "label": "3.3V", "type": "power_out", "voltage": 3.3 },
+      { "id": "a0", "label": "A0", "type": "analog_io" },
+      { "id": "a1", "label": "A1", "type": "analog_io" },
+      { "id": "a2", "label": "A2", "type": "analog_io" },
+      { "id": "a3", "label": "A3", "type": "analog_io" },
+      { "id": "a4", "label": "A4", "type": "analog_io" },
+      { "id": "a5", "label": "A5", "type": "analog_io" },
+      { "id": "d0", "label": "D0", "type": "digital_io" },
+      { "id": "d1", "label": "D1", "type": "digital_io" },
+      { "id": "d2", "label": "D2", "type": "digital_io" },
+      { "id": "d3", "label": "D3", "type": "digital_io", "pwm": true },
+      { "id": "d4", "label": "D4", "type": "digital_io" },
+      { "id": "d5", "label": "D5", "type": "digital_io", "pwm": true },
+      { "id": "d6", "label": "D6", "type": "digital_io", "pwm": true },
+      { "id": "d7", "label": "D7", "type": "digital_io" },
+      { "id": "d8", "label": "D8", "type": "digital_io" },
+      { "id": "d9", "label": "D9", "type": "digital_io", "pwm": true },
+      { "id": "d10", "label": "D10", "type": "digital_io", "pwm": true },
+      { "id": "d11", "label": "D11", "type": "digital_io", "pwm": true },
+      { "id": "d12", "label": "D12", "type": "digital_io" },
+      { "id": "d13", "label": "D13", "type": "digital_io" }
+    ],
+    "layout": {
+      "left": ["vin", "gnd1", "gnd2", "5v", "3v3", "a0", "a1", "a2", "a3", "a4", "a5"],
+      "right": ["d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "d12", "d13"]
+    }
+  },
+
+  {
+    "id": "hc_sr04",
+    "name": "HC-SR04 Ultrasonic Sensor",
+    "aliases": ["ultrasonic sensor", "distance sensor", "sonar sensor"],
+    "category": "sensor",
+    "pins": [
+      { "id": "vcc", "label": "VCC", "type": "power_in", "voltage": 5 },
+      { "id": "trig", "label": "TRIG", "type": "digital_input" },
+      { "id": "echo", "label": "ECHO", "type": "digital_output" },
+      { "id": "gnd", "label": "GND", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["vcc", "trig", "echo", "gnd"],
+      "right": []
+    }
+  },
+
+  {
+    "id": "led",
+    "name": "LED",
+    "aliases": ["light emitting diode", "diode", "indicator led"],
+    "category": "output",
+    "pins": [
+      { "id": "anode", "label": "Anode (+)", "type": "power_in" },
+      { "id": "cathode", "label": "Cathode (-)", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["anode"],
+      "right": ["cathode"]
+    }
+  },
+
+  {
+    "id": "resistor",
+    "name": "Resistor",
+    "aliases": ["220 ohm resistor", "1k resistor", "10k resistor"],
+    "category": "passive",
+    "pins": [
+      { "id": "terminal1", "label": "Terminal 1", "type": "passive" },
+      { "id": "terminal2", "label": "Terminal 2", "type": "passive" }
+    ],
+    "layout": {
+      "left": ["terminal1"],
+      "right": ["terminal2"]
+    }
+  },
+
+  {
+    "id": "buzzer",
+    "name": "Buzzer",
+    "aliases": ["piezo buzzer", "active buzzer", "speaker"],
+    "category": "output",
+    "pins": [
+      { "id": "positive", "label": "+", "type": "power_in" },
+      { "id": "negative", "label": "-", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["positive"],
+      "right": ["negative"]
+    }
+  },
+
+  {
+    "id": "servo",
+    "name": "SG90 Servo Motor",
+    "aliases": ["servo motor", "micro servo", "sg90"],
+    "category": "actuator",
+    "pins": [
+      { "id": "signal", "label": "Signal", "type": "pwm_input" },
+      { "id": "vcc", "label": "VCC", "type": "power_in", "voltage": 5 },
+      { "id": "gnd", "label": "GND", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["signal", "vcc", "gnd"],
+      "right": []
+    }
+  },
+
+  {
+    "id": "push_button",
+    "name": "Push Button",
+    "aliases": ["button", "momentary switch", "tactile switch"],
+    "category": "input",
+    "pins": [
+      { "id": "a1", "label": "A1", "type": "switch" },
+      { "id": "a2", "label": "A2", "type": "switch" },
+      { "id": "b1", "label": "B1", "type": "switch" },
+      { "id": "b2", "label": "B2", "type": "switch" }
+    ],
+    "layout": {
+      "left": ["a1", "a2"],
+      "right": ["b1", "b2"]
+    }
+  },
+
+  {
+    "id": "potentiometer",
+    "name": "Potentiometer",
+    "aliases": ["pot", "variable resistor", "rotary potentiometer"],
+    "category": "input",
+    "pins": [
+      { "id": "vcc", "label": "VCC", "type": "power_in" },
+      { "id": "signal", "label": "SIG", "type": "analog_output" },
+      { "id": "gnd", "label": "GND", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["vcc", "signal", "gnd"],
+      "right": []
+    }
+  },
+
+  {
+    "id": "dht11",
+    "name": "DHT11 Temperature and Humidity Sensor",
+    "aliases": ["temperature sensor", "humidity sensor", "dht sensor"],
+    "category": "sensor",
+    "pins": [
+      { "id": "vcc", "label": "VCC", "type": "power_in", "voltage": 5 },
+      { "id": "data", "label": "DATA", "type": "digital_io" },
+      { "id": "nc", "label": "NC", "type": "unused" },
+      { "id": "gnd", "label": "GND", "type": "ground" }
+    ],
+    "layout": {
+      "left": ["vcc", "data", "nc", "gnd"],
+      "right": []
+    }
+  },
+
+  {
+    "id": "breadboard",
+    "name": "Breadboard",
+    "aliases": ["solderless breadboard", "protoboard"],
+    "category": "prototyping",
+    "pins": [
+      { "id": "power_pos", "label": "+ Rail", "type": "power_bus" },
+      { "id": "power_neg", "label": "- Rail", "type": "ground_bus" },
+      { "id": "terminal_strip", "label": "Terminal Strip", "type": "connection_bus" }
+    ],
+    "layout": {
+      "left": ["power_pos", "power_neg"],
+      "right": ["terminal_strip"]
+    }
+  }
+]

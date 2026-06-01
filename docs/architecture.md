@@ -19,3 +19,5 @@ Failure:
 
 Hardcoded components had weird wiring - so color coded and bolded
 Components pin outputs were weird not in frame - used a scaling algorithm 
+
+## DAY 2:

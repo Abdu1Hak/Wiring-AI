@@ -1,0 +1,182 @@
+[
+  {
+    "id": "arduino_hc_sr04",
+    "requires": ["arduino_uno", "hc_sr04"],
+    "connections": [
+      {
+        "from": "arduino_uno.5v",
+        "to": "hc_sr04.vcc",
+        "type": "power",
+        "label": "Power"
+      },
+      {
+        "from": "arduino_uno.gnd1",
+        "to": "hc_sr04.gnd",
+        "type": "ground",
+        "label": "Ground"
+      },
+      {
+        "from": "arduino_uno.d9",
+        "to": "hc_sr04.trig",
+        "type": "signal",
+        "label": "Trigger"
+      },
+      {
+        "from": "hc_sr04.echo",
+        "to": "arduino_uno.d10",
+        "type": "signal",
+        "label": "Echo"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_led_resistor",
+    "requires": ["arduino_uno", "led", "resistor"],
+    "connections": [
+      {
+        "from": "arduino_uno.d13",
+        "to": "resistor.terminal1",
+        "type": "signal",
+        "label": "LED Signal"
+      },
+      {
+        "from": "resistor.terminal2",
+        "to": "led.anode",
+        "type": "signal",
+        "label": "Current Limiting"
+      },
+      {
+        "from": "led.cathode",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Ground"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_buzzer",
+    "requires": ["arduino_uno", "buzzer"],
+    "connections": [
+      {
+        "from": "arduino_uno.d8",
+        "to": "buzzer.positive",
+        "type": "signal",
+        "label": "Buzzer Signal"
+      },
+      {
+        "from": "buzzer.negative",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Ground"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_servo",
+    "requires": ["arduino_uno", "servo"],
+    "connections": [
+      {
+        "from": "arduino_uno.d9",
+        "to": "servo.signal",
+        "type": "signal",
+        "label": "PWM Signal"
+      },
+      {
+        "from": "arduino_uno.5v",
+        "to": "servo.vcc",
+        "type": "power",
+        "label": "Power"
+      },
+      {
+        "from": "servo.gnd",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Ground"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_dht11",
+    "requires": ["arduino_uno", "dht11"],
+    "connections": [
+      {
+        "from": "arduino_uno.5v",
+        "to": "dht11.vcc",
+        "type": "power",
+        "label": "Power"
+      },
+      {
+        "from": "dht11.gnd",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Ground"
+      },
+      {
+        "from": "dht11.data",
+        "to": "arduino_uno.d2",
+        "type": "signal",
+        "label": "Data"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_push_button_resistor",
+    "requires": ["arduino_uno", "push_button", "resistor"],
+    "connections": [
+      {
+        "from": "arduino_uno.5v",
+        "to": "push_button.a1",
+        "type": "power",
+        "label": "Button Power"
+      },
+      {
+        "from": "push_button.b1",
+        "to": "arduino_uno.d2",
+        "type": "signal",
+        "label": "Button Signal"
+      },
+      {
+        "from": "push_button.b1",
+        "to": "resistor.terminal1",
+        "type": "signal",
+        "label": "Pull-down Connection"
+      },
+      {
+        "from": "resistor.terminal2",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Pull-down Ground"
+      }
+    ]
+  },
+
+  {
+    "id": "arduino_potentiometer",
+    "requires": ["arduino_uno", "potentiometer"],
+    "connections": [
+      {
+        "from": "arduino_uno.5v",
+        "to": "potentiometer.vcc",
+        "type": "power",
+        "label": "Power"
+      },
+      {
+        "from": "potentiometer.gnd",
+        "to": "arduino_uno.gnd1",
+        "type": "ground",
+        "label": "Ground"
+      },
+      {
+        "from": "potentiometer.signal",
+        "to": "arduino_uno.a0",
+        "type": "analog",
+        "label": "Analog Output"
+      }
+    ]
+  }
+]
