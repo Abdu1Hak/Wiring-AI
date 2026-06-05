@@ -1,23 +1,27 @@
-## DAY 1: 
+# Wiring AI Architecture
 
-- Goal: User selects predefined components and generates basic components
+## Flow
 
-// Tools
-- React / Vite for the frontend
-- React Flow for the wiring diagram canvas
-- FastAPI for the backend API
-- Pydantic for backend request and response validation
-- Tailwind CSS for frontend styling
-- Uvicorn to run the FastAPI backend locally
+```
+User input (description + selected components)
+  → Backend loads catalog context
+  → AI returns structured JSON plan
+  → Pydantic + backend validator
+  → Graph builder (React Flow nodes/edges)
+  → Frontend renders diagram + steps
+```
 
-/ ARCHITECTURE:
-The user selects components in the React frontend. The selected component IDs are sent to the FastAPI backend through a POST request. The backend checks the selected components, applies existing wiring rules, and returns nodes, edges, and warnings. The frontend then renders the result using React Flow.
+## Principles
 
+1. **AI plans** — compatibility, missing parts, pin connections, steps.
+2. **Backend verifies** — component/pin IDs, connection types, safety rules.
+3. **Frontend renders** — no electrical logic on the client.
 
+## Repositories
 
-Failure:
-
-Hardcoded components had weird wiring - so color coded and bolded
-Components pin outputs were weird not in frame - used a scaling algorithm 
-
-## DAY 2:
+- `backend/app/seed/catalog_data.py` — 78 seeded components
+- `backend/app/services/ai_wiring_planner_service.py` — OpenAI or mock planner
+- `backend/app/services/backend_plan_validator_service.py` — strict validation
+- `backend/app/services/graph_builder_service.py` — AI connections → React Flow
+- `frontend/src/components/builder/` — builder UX
+- `frontend/src/components/flow/` — custom React Flow nodes
